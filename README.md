@@ -57,6 +57,11 @@ Main settings live in `src/main/resources/application.yml` under the `app.*` pre
 | [implementationPlan.md](docs/implementationPlan.md) | Phased build plan |
 | [edgecase.md](docs/edgecase.md) | Edge cases |
 | [eval/](docs/eval/) | Per-phase evaluation checklists |
+| [deploymentPlan.md](docs/deploymentPlan.md) | Deployment instructions (Vercel & Backend) |
+
+## Frontend Integration
+
+The backend API is pre-configured with **CORS support** allowing requests from `http://localhost:*` and `https://*.vercel.app`. This makes it ready to connect with a Vercel-hosted frontend out of the box. See the deployment plan for full details.
 
 ## Data ingest (dev profile)
 
