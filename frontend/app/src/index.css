@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-background');
+    min-height: max(884px, 100dvh);
+  }
+}
+
+.glass-surface {
+  background: rgba(26, 28, 28, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.input-glow:focus-within {
+  border-color: theme('colors.primary');
+  box-shadow: 0 0 0 4px rgba(255, 179, 177, 0.15);
+}
+
+/* Shimmer animation for AI loading state */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Subtle pulse for AI thinking border */
+@keyframes border-pulse {
+  0% { border-color: rgba(255, 83, 90, 0.2); box-shadow: 0 0 0 0 rgba(255, 83, 90, 0.1); }
+  50% { border-color: rgba(255, 83, 90, 0.6); box-shadow: 0 0 10px 0 rgba(255, 83, 90, 0.2); }
+  100% { border-color: rgba(255, 83, 90, 0.2); box-shadow: 0 0 0 0 rgba(255, 83, 90, 0); }
+}
+
+.ai-pulse-border {
+  animation: border-pulse 3s infinite ease-in-out;
+}
+
+/* Glassmorphic utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.15);
+}
+
+.img-zoom-wrapper {
+  overflow: hidden;
+}
+
+.img-zoom-wrapper img {
+  transition: transform 0.7s ease;
+}
+
+.card-hover-lift:hover .img-zoom-wrapper img {
+  transform: scale(1.08);
+}
+
+/* Hide scrollbar for clean horizontal scroll if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

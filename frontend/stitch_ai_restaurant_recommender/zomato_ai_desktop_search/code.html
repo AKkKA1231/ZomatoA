@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zomato AI - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#e9c349",
+                    "on-tertiary-container": "#4f3e00",
+                    "surface-tint": "#ffb3b1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-bright": "#38393a",
+                    "primary-container": "#ff535a",
+                    "on-secondary": "#313030",
+                    "surface-container-highest": "#333535",
+                    "secondary-container": "#4a4949",
+                    "tertiary-container": "#cca830",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary-fixed": "#ffe088",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-container-lowest": "#0c0f0f",
+                    "secondary": "#c8c6c5",
+                    "on-secondary-fixed-variant": "#474646",
+                    "error-container": "#93000a",
+                    "on-primary": "#680011",
+                    "inverse-surface": "#e2e2e2",
+                    "surface-dim": "#121414",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#3c2f00",
+                    "surface-container": "#1e2020",
+                    "outline": "#ab8987",
+                    "on-primary-fixed": "#410007",
+                    "on-primary-container": "#5b000e",
+                    "outline-variant": "#5b403f",
+                    "surface": "#121414",
+                    "surface-container-low": "#1a1c1c",
+                    "primary": "#ffb3b1",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#bb162c",
+                    "background": "#121414",
+                    "primary-fixed": "#ffdad8",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-variant": "#333535",
+                    "surface-container-high": "#282a2b",
+                    "on-secondary-container": "#bab8b7",
+                    "on-surface": "#e2e2e2",
+                    "on-primary-fixed-variant": "#92001c",
+                    "tertiary-fixed-dim": "#e9c349",
+                    "on-tertiary-fixed": "#241a00",
+                    "on-background": "#e2e2e2",
+                    "on-surface-variant": "#e4bebc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "container-margin": "24px",
+                    "stack-lg": "32px",
+                    "unit": "8px",
+                    "gutter": "16px",
+                    "stack-md": "16px",
+                    "section-gap": "48px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "caption": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .glass-surface {
+            background: rgba(26, 28, 28, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .input-glow:focus-within {
+            border-color: theme('colors.primary');
+            box-shadow: 0 0 0 4px rgba(255, 179, 177, 0.15);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pb-0">
+<!-- TopAppBar JSON Executed -->
+<header class="fixed top-0 w-full flex justify-between items-center px-8 md:px-16 py-4 bg-surface/80 backdrop-blur-xl dark:bg-surface-dim/80 border-b border-white/10 shadow-lg docked full-width z-50">
+<div class="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim text-3xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-headline-md text-2xl font-extrabold text-primary dark:text-primary-fixed-dim tracking-tight">Zomato AI</span>
+</div>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="flex items-center gap-2 text-primary dark:text-primary-fixed-dim transition-opacity hover:opacity-80" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-md text-label-md">Discover</span>
+</a>
+<a class="flex items-center gap-2 text-secondary dark:text-secondary-fixed-dim opacity-70 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+<span class="font-label-md text-label-md">AI Chat</span>
+</a>
+<a class="flex items-center gap-2 text-secondary dark:text-secondary-fixed-dim opacity-70 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+<span class="font-label-md text-label-md">Saved</span>
+</a>
+</nav>
+<div class="flex items-center hover:opacity-80 transition-opacity cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant overflow-hidden border border-outline-variant shadow-sm">
+<span class="material-symbols-outlined text-lg">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[100px] px-8 md:px-16 flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
+<!-- Hero Background Abstract -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-40">
+<div class="w-[1000px] h-[1000px] rounded-full bg-gradient-to-tr from-primary/10 to-transparent blur-[120px] absolute -top-[300px] -left-[200px]"></div>
+<div class="w-[800px] h-[800px] rounded-full bg-gradient-to-bl from-tertiary/10 to-transparent blur-[100px] absolute bottom-[-100px] right-[-100px]"></div>
+</div>
+<div class="w-full max-w-[960px] z-10 flex flex-col gap-12 animate-fade-in-up my-12">
+<div class="text-center space-y-6">
+<h1 class="font-display-lg text-5xl md:text-7xl text-primary drop-shadow-lg tracking-tight">Find Your Flavor</h1>
+<p class="font-body-lg text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">Let our AI curate the perfect dining experience tailored exactly to your mood and taste right now.</p>
+</div>
+<!-- Glassmorphism Search Card -->
+<div class="glass-surface rounded-[32px] p-8 md:p-12 transition-all duration-300">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- City Dropdown -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface ml-1">City</label>
+<div class="relative input-glow rounded-xl border border-outline-variant bg-surface-container-highest transition-all duration-200 shadow-inner">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">location_on</span>
+<select class="w-full pl-12 pr-4 py-4 bg-transparent font-body-md text-body-md text-on-surface appearance-none focus:outline-none cursor-pointer">
+<option class="bg-surface text-on-surface" value="delhi">Delhi NCR</option>
+<option class="bg-surface text-on-surface" value="bangalore">Bangalore</option>
+<option class="bg-surface text-on-surface" value="mumbai">Mumbai</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Cuisine Dropdown -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface ml-1">Cuisine</label>
+<div class="relative input-glow rounded-xl border border-outline-variant bg-surface-container-highest transition-all duration-200 shadow-inner">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant">restaurant</span>
+<select class="w-full pl-12 pr-4 py-4 bg-transparent font-body-md text-body-md text-on-surface appearance-none focus:outline-none cursor-pointer">
+<option class="bg-surface text-on-surface" value="any">Any Cuisine</option>
+<option class="bg-surface text-on-surface" value="italian">Italian</option>
+<option class="bg-surface text-on-surface" value="chinese">Chinese</option>
+<option class="bg-surface text-on-surface" value="indian">North Indian</option>
+</select>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Budget Selector -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface ml-1">Budget</label>
+<div class="flex gap-3 h-[56px]">
+<button class="flex-1 rounded-xl border border-outline-variant bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors focus:border-primary focus:text-primary focus:bg-primary/10 shadow-sm">₹</button>
+<button class="flex-1 rounded-xl border border-primary bg-primary/10 text-primary font-label-md text-label-md transition-colors shadow-sm">₹₹</button>
+<button class="flex-1 rounded-xl border border-outline-variant bg-surface-container-highest text-on-surface-variant font-label-md text-label-md hover:border-primary hover:text-primary transition-colors focus:border-primary focus:text-primary focus:bg-primary/10 shadow-sm">₹₹₹</button>
+</div>
+</div>
+<!-- Rating Slider -->
+<div class="flex flex-col gap-3 justify-center">
+<div class="flex justify-between items-center ml-1">
+<label class="font-label-md text-label-md text-on-surface">Min Rating</label>
+<span class="font-label-md text-label-md text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span> 4.0+</span>
+</div>
+<div class="pt-3">
+<input class="w-full h-2.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-tertiary shadow-inner" max="5" min="0" step="0.5" type="range" value="4"/>
+</div>
+</div>
+</div>
+<!-- Additional Prefs -->
+<div class="mt-8 flex flex-col gap-3">
+<label class="font-label-md text-label-md text-on-surface ml-1">Vibe &amp; Preferences</label>
+<div class="relative input-glow rounded-xl border border-outline-variant bg-surface-container-highest transition-all duration-200 shadow-inner">
+<textarea class="w-full p-5 bg-transparent font-body-md text-body-md text-on-surface resize-none focus:outline-none placeholder:text-on-surface-variant/40" placeholder="e.g., 'Quiet ambiance for a date', 'Rooftop with a view', 'Pet friendly'" rows="3"></textarea>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="mt-10">
+<button class="w-full py-5 rounded-xl bg-primary text-on-primary font-headline-md text-[20px] font-bold hover:scale-[1.01] hover:shadow-[0_15px_30px_rgba(255,179,177,0.25)] transition-all duration-300 flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+                        Curate Experience
+                    </button>
+</div>
+</div>
+<!-- Quick Tags -->
+<div class="flex flex-wrap justify-center gap-3 mt-6 opacity-80">
+<span class="px-5 py-2 rounded-full bg-white/5 text-white/90 font-caption text-sm border border-white/10 cursor-pointer hover:bg-white/10 transition-colors backdrop-blur-sm">Trending Tonight</span>
+<span class="px-5 py-2 rounded-full bg-white/5 text-white/90 font-caption text-sm border border-white/10 cursor-pointer hover:bg-white/10 transition-colors backdrop-blur-sm">New in Town</span>
+<span class="px-5 py-2 rounded-full bg-white/5 text-white/90 font-caption text-sm border border-white/10 cursor-pointer hover:bg-white/10 transition-colors backdrop-blur-sm">Award Winning</span>
+</div>
+</div>
+</main>
+</body></html>

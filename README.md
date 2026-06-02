@@ -59,9 +59,34 @@ Main settings live in `src/main/resources/application.yml` under the `app.*` pre
 | [eval/](docs/eval/) | Per-phase evaluation checklists |
 | [deploymentPlan.md](docs/deploymentPlan.md) | Deployment instructions (Vercel & Backend) |
 
-## Frontend Integration
+## Frontend Integration (Vite + React)
 
-The backend API is pre-configured with **CORS support** allowing requests from `http://localhost:*` and `https://*.vercel.app`. This makes it ready to connect with a Vercel-hosted frontend out of the box. See the deployment plan for full details.
+We have built a premium, modern Single Page Application (SPA) in `frontend/app` using **Vite, React, and Tailwind CSS**. It features high-fidelity glassmorphism themes, dynamic shimmer loaders, and a responsive bento/masonry grid matching the Stitch designs perfectly!
+
+### Running the Frontend Locally
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend/app
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+### Connecting to the Backend
+
+The frontend is configured with a `vercel.json` file to securely proxy all `/api` calls to your hosted backend. When running locally, it connects to your backend (or falls back to a simulated high-fidelity offline mode if the backend is down!).
+
+The backend is pre-configured with **CORS support** allowing requests from `http://localhost:*` and `https://*.vercel.app`. This makes it ready to connect with your Vercel-hosted frontend out of the box. See [docs/deploymentPlan.md](docs/deploymentPlan.md) for full deployment details.
 
 ## Data ingest (dev profile)
 
