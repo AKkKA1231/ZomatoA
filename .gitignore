@@ -15,8 +15,7 @@ target/
 .env
 *.env.local
 
-# Processed dataset cache
-data/processed/
+# Raw source CSV (large, not needed in repo)
 data/raw/
 
 # OS
