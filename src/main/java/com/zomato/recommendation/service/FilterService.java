@@ -42,13 +42,13 @@ public class FilterService {
     }
 
     private boolean matchCity(Restaurant r, UserPreferences p) {
-        if (p.city() == null || p.city().isBlank()) return true;
+        if (p.city() == null || p.city().isBlank() || p.city().equalsIgnoreCase("any")) return true;
         if (r.city() == null) return false;
         return r.city().toLowerCase().contains(p.city().toLowerCase());
     }
 
     private boolean matchCuisine(Restaurant r, UserPreferences p) {
-        if (p.cuisine() == null || p.cuisine().isBlank()) return true;
+        if (p.cuisine() == null || p.cuisine().isBlank() || p.cuisine().equalsIgnoreCase("any")) return true;
         if (r.cuisines() == null) return false;
         return r.cuisines().stream()
                 .anyMatch(c -> c.toLowerCase().contains(p.cuisine().toLowerCase()));

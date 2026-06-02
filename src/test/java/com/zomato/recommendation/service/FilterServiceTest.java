@@ -115,4 +115,17 @@ class FilterServiceTest {
         assertThat(result.shortlist()).hasSize(1);
         assertThat(result.shortlist().get(0).restaurantId()).isEqualTo("1");
     }
+
+    @Test
+    void shouldIgnoreCuisineAndCityFilterWhenAny() {
+        Restaurant r1 = new Restaurant("1", "R1", "Bangalore", "Loc", List.of("Italian"), null, 0, null, 0);
+        Restaurant r2 = new Restaurant("2", "R2", "Delhi", "Loc", List.of("Chinese"), null, 0, null, 0);
+        when(repository.findAll()).thenReturn(List.of(r1, r2));
+
+        UserPreferences prefs = new UserPreferences("any", null, "any", null, null);
+        FilterResult result = filterService.filter(prefs);
+
+        assertThat(result.shortlist()).hasSize(2);
+    }
 }
+
