@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://zomatoa-backend.onrender.com/api/:path*"
+      "destination": "https://zomatoa-production.up.railway.app/api/:path*"
     }
   ]
 }
