@@ -13,7 +13,7 @@ management:
 
 app:
   data:
-    cache-path: data/processed/restaurants.json
+    cache-path: classpath:data/processed/restaurants.json
     dataset-id: ManikaSaini/zomato-restaurant-recommendation
     raw-path: data/raw
     auto-ingest-on-startup: false

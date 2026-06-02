@@ -98,9 +98,13 @@ public class DatasetIngestionService {
     }
 
     public void loadFromCache() throws IOException {
-        Path cachePath = Path.of(appProperties.data().cachePath());
+        String cachePath = appProperties.data().cachePath();
         List<Restaurant> restaurants = cacheStore.readRestaurants(cachePath);
         repository.reload(restaurants);
-        log.info("Loaded {} restaurants from cache at {}", restaurants.size(), cachePath.toAbsolutePath());
+        log.info("Loaded {} restaurants from cache at {}", restaurants.size(), cachePath);
+    }
+
+    public boolean isCacheAvailable() {
+        return cacheStore.exists(appProperties.data().cachePath());
     }
 }

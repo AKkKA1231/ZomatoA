@@ -8,8 +8,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
+
 
 @Component
 public class RestaurantDataLoader {
@@ -26,7 +25,7 @@ public class RestaurantDataLoader {
 
     @EventListener(ApplicationReadyEvent.class)
     public void onApplicationReady() {
-        Path cachePath = Path.of(appProperties.data().cachePath());
+        String cachePath = appProperties.data().cachePath();
 
         try {
             if (appProperties.data().autoIngestOnStartup()) {
@@ -35,13 +34,13 @@ public class RestaurantDataLoader {
                 return;
             }
 
-            if (Files.exists(cachePath)) {
+            if (ingestionService.isCacheAvailable()) {
                 ingestionService.loadFromCache();
                 return;
             }
 
             log.warn("Restaurant cache not found at {}. Load data via POST /api/v1/admin/ingest (dev profile) or run ingest.",
-                    cachePath.toAbsolutePath());
+                    cachePath);
         } catch (Exception e) {
             log.error("Failed to load restaurant data on startup: {}", e.getMessage(), e);
         }

@@ -56,7 +56,7 @@ class DatasetIngestionServiceTest {
         assertThat(repository.count()).isEqualTo(summary.rowsIngested());
         assertThat(Path.of(summary.cachePath())).exists();
 
-        var metadata = cacheStore.readMetadata(Path.of(appProperties.data().cachePath()));
+        var metadata = cacheStore.readMetadata(appProperties.data().cachePath());
         assertThat(metadata).isPresent();
         assertThat(metadata.get().rowCount()).isEqualTo(summary.rowsIngested());
         assertThat(metadata.get().budgetThresholds()).containsKeys(
