@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato AI - Personalized Restaurant Recommendations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --container-bg: rgba(22, 28, 45, 0.45);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-accent: #e23744; /* Zomato Red */
+            --primary-hover: #f04351;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --input-bg: rgba(17, 24, 39, 0.8);
+            --glow-color: rgba(226, 55, 68, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(226, 55, 68, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(37, 99, 235, 0.08) 0px, transparent 50%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 640px;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: var(--container-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4), 0 0 40px rgba(226, 55, 68, 0.03);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff 40%, #fca5a5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        select, input[type="text"], input[type="number"], textarea {
+            width: 100%;
+            padding: 0.85rem 1rem;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 3px var(--glow-color);
+            background-color: rgba(17, 24, 39, 0.95);
+        }
+
+        select option {
+            background-color: #111827;
+            color: var(--text-main);
+        }
+
+        /* Custom styling for Budget options */
+        .budget-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+
+        .budget-option {
+            position: relative;
+        }
+
+        .budget-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .budget-label {
+            display: block;
+            text-align: center;
+            padding: 0.75rem;
+            background-color: var(--input-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .budget-option input[type="radio"]:checked + .budget-label {
+            background-color: var(--primary-accent);
+            border-color: var(--primary-accent);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(226, 55, 68, 0.3);
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        input[type="range"] {
+            flex-grow: 1;
+            accent-color: var(--primary-accent);
+            height: 6px;
+            border-radius: 3px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .slider-value {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            min-width: 2.5rem;
+            text-align: right;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-accent) 0%, #be123c 100%);
+            border: none;
+            border-radius: 14px;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(226, 55, 68, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(226, 55, 68, 0.4);
+            background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-accent) 100%);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <header>
+                <h1>Zomato AI</h1>
+                <p>Personalized culinary recommendations in seconds</p>
+            </header>
+
+            <form th:action="@{/recommendations}" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City Location</label>
+                        <select id="city" name="city" required>
+                            <option value="">Select City</option>
+                            <option th:each="c : ${cities}" th:value="${c}" th:text="${c}"></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cuisine">Cuisine Style</label>
+                        <select id="cuisine" name="cuisine" required>
+                            <option value="">Select Cuisine</option>
+                            <option th:each="cu : ${cuisines}" th:value="${cu}" th:text="${cu}"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Budget Tier</label>
+                    <div class="budget-group">
+                        <div class="budget-option" th:each="b : ${budgetBands}">
+                            <input type="radio" th:id="${'budget_' + b}" name="budget" th:value="${b}" th:checked="${b.name() == 'MEDIUM'}" required>
+                            <label th:for="${'budget_' + b}" class="budget-label" th:text="${b}"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="minRating">Minimum Star Rating</label>
+                        <div class="slider-container">
+                            <input type="range" id="minRating" name="minRating" min="0.0" max="5.0" step="0.1" value="4.0" oninput="updateSliderValue(this.value)">
+                            <span class="slider-value" id="ratingVal">4.0</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topN">Recommendations Count</label>
+                        <input type="number" id="topN" name="topN" min="1" max="10" value="5" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalPreferences">Describe Additional Preferences</label>
+                    <textarea id="additionalPreferences" name="additionalPreferences" placeholder="e.g., quiet outdoor seating, romantic garden vibes, child friendly..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Generate Recommendations</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function updateSliderValue(val) {
+            document.getElementById('ratingVal').innerText = parseFloat(val).toFixed(1);
+        }
+    </script>
+</body>
+</html>

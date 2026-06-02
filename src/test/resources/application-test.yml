@@ -1,0 +1,21 @@
+app:
+  data:
+    cache-path: src/test/resources/fixtures/restaurants-small.json
+    dataset-id: ManikaSaini/zomato-restaurant-recommendation
+    raw-path: src/test/resources/fixtures/raw
+    auto-ingest-on-startup: false
+  recommendation:
+    top-n: 3
+    shortlist-max: 10
+    pre-rank:
+      rating-weight: 0.5
+      cost-weight: 0.3
+      cuisine-weight: 0.2
+  llm:
+    provider: groq
+    base-url: https://api.groq.com/openai/v1
+    model: llama3-8b-8192
+    api-key: test-key
+    temperature: 0.2
+    timeout: 5s
+    max-retries: 0

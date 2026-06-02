@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: zomato-recommendation
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+app:
+  data:
+    cache-path: data/processed/restaurants.json
+    dataset-id: ManikaSaini/zomato-restaurant-recommendation
+    raw-path: data/raw
+    auto-ingest-on-startup: false
+  recommendation:
+    top-n: 5
+    shortlist-max: 20
+    pre-rank:
+      rating-weight: 0.5
+      cost-weight: 0.3
+      cuisine-weight: 0.2
+  llm:
+    provider: groq
+    base-url: https://api.groq.com/openai/v1
+    model: llama-3.3-70b-versatile
+    api-key: ${GROQ_API_KEY:}
+    temperature: 0.2
+    timeout: 30s
+    max-retries: 2

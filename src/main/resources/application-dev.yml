@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+logging:
+  level:
+    com.zomato.recommendation: DEBUG
+    org.springframework.web: INFO
+
+app:
+  data:
+    cache-path: data/processed/restaurants.json
+    raw-path: data/raw
+    auto-ingest-on-startup: false

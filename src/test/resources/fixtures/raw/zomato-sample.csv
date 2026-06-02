@@ -1,0 +1,21 @@
+Restaurant Name,City,Cuisines,Average Cost for two people,Aggregate rating,Address,Votes
+Trattoria Roma,Bangalore,"Italian, Continental",1500,4.5,Indiranagar,1200
+Spice Garden,Bangalore,North Indian,800,4.2,Koramangala,890
+Dragon Wok,Bangalore,"Chinese, Thai",1200,4.6,HSR Layout,2100
+Cafe Mocha,Bangalore,Cafe,600,4.0,Whitefield,450
+The Royal Dhaba,Delhi,North Indian,500,4.1,Connaught Place,3200
+Sushi Zen,Delhi,"Japanese, Sushi",2500,4.7,Saket,980
+Pizza Express,Mumbai,Italian,1800,4.3,Bandra,1500
+Coastal Catch,Mumbai,Seafood,2200,4.8,Colaba,760
+Street Spice,Mumbai,Street Food,400,3.9,Andheri,540
+Green Bowl,Chennai,Healthy Food,900,4.4,Anna Nagar,410
+Chettinad House,Chennai,South Indian,700,4.5,T Nagar,670
+Invalid Place,Chennai,,600,,Missing rating row,
+,Bangalore,Italian,1000,4.0,Missing name,100
+Budget Bites,Bangalore,Fast Food,300,3.5,Marathahalli,200
+Premium Grill,Bangalore,"Continental, Steak",3500,4.9,UB City,890
+Hyderabadi Spice,Hyderabad,Biryani,1100,4.6,Banjara Hills,1100
+Art of Food,Bangalore,Italian,1300,4.1,JP Nagar,330
+Family Feast,Bangalore,"North Indian, Chinese",950,4.3,BTM Layout,520
+Ocean Blue,Mumbai,"Seafood, Continental",2800,4.6,Juhu,440
+Tea Trails,Bangalore,Cafe,450,4.0,Malleshwaram,180

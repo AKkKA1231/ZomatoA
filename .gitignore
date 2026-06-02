@@ -1,0 +1,27 @@
+# Build
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.class
+.project
+.classpath
+.settings/
+
+# Environment & secrets
+.env
+*.env.local
+
+# Processed dataset cache
+data/processed/
+data/raw/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,0 +1,28 @@
+{
+  "datasetId": "ManikaSaini/zomato-restaurant-recommendation",
+  "description": "Canonical column mapping for Zomato-style CSV exports ingested by this service.",
+  "requiredFields": ["name", "city", "rating"],
+  "columnMapping": {
+    "name": ["Restaurant Name", "name", "restaurant_name", "restaurant"],
+    "city": ["City", "city", "city name", "listed_city"],
+    "cuisines": ["Cuisines", "cuisine"],
+    "rating": ["Aggregate rating", "rating", "aggregate_rating", "rate"],
+    "costForTwo": [
+      "Average Cost for two people",
+      "average_cost_for_two",
+      "cost_for_two",
+      "approx_cost(for two people)",
+      "average cost"
+    ],
+    "location": ["Address", "location", "listed_address"],
+    "votes": ["Votes", "rating_count"]
+  },
+  "derivedFields": {
+    "restaurantId": "SHA-256 hash (first 16 hex chars) of normalized name + city",
+    "budgetBand": "LOW | MEDIUM | HIGH from global cost percentiles (P33, P66)"
+  },
+  "outputFiles": {
+    "restaurants": "data/processed/restaurants.json",
+    "metadata": "data/processed/metadata.json"
+  }
+}

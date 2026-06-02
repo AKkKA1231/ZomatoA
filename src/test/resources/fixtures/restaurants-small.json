@@ -1,0 +1,181 @@
+[ {
+  "restaurantId" : "307635ca651b221c",
+  "name" : "Trattoria Roma",
+  "city" : "Bangalore",
+  "location" : "Indiranagar",
+  "cuisines" : [ "Italian", "Continental" ],
+  "rating" : 4.5,
+  "costForTwo" : 1500,
+  "budgetBand" : "HIGH",
+  "votes" : 1200
+}, {
+  "restaurantId" : "cd8bcd86c6522b04",
+  "name" : "Spice Garden",
+  "city" : "Bangalore",
+  "location" : "Koramangala",
+  "cuisines" : [ "North Indian" ],
+  "rating" : 4.2,
+  "costForTwo" : 800,
+  "budgetBand" : "MEDIUM",
+  "votes" : 890
+}, {
+  "restaurantId" : "a728d1e6a3d60616",
+  "name" : "Dragon Wok",
+  "city" : "Bangalore",
+  "location" : "HSR Layout",
+  "cuisines" : [ "Chinese", "Thai" ],
+  "rating" : 4.6,
+  "costForTwo" : 1200,
+  "budgetBand" : "MEDIUM",
+  "votes" : 2100
+}, {
+  "restaurantId" : "3548b7dd41b09388",
+  "name" : "Cafe Mocha",
+  "city" : "Bangalore",
+  "location" : "Whitefield",
+  "cuisines" : [ "Cafe" ],
+  "rating" : 4.0,
+  "costForTwo" : 600,
+  "budgetBand" : "LOW",
+  "votes" : 450
+}, {
+  "restaurantId" : "0443f7c6c6f06ebc",
+  "name" : "The Royal Dhaba",
+  "city" : "Delhi",
+  "location" : "Connaught Place",
+  "cuisines" : [ "North Indian" ],
+  "rating" : 4.1,
+  "costForTwo" : 500,
+  "budgetBand" : "LOW",
+  "votes" : 3200
+}, {
+  "restaurantId" : "75eb39e197ac5d01",
+  "name" : "Sushi Zen",
+  "city" : "Delhi",
+  "location" : "Saket",
+  "cuisines" : [ "Japanese", "Sushi" ],
+  "rating" : 4.7,
+  "costForTwo" : 2500,
+  "budgetBand" : "HIGH",
+  "votes" : 980
+}, {
+  "restaurantId" : "8f2db9a1e6d3981f",
+  "name" : "Pizza Express",
+  "city" : "Mumbai",
+  "location" : "Bandra",
+  "cuisines" : [ "Italian" ],
+  "rating" : 4.3,
+  "costForTwo" : 1800,
+  "budgetBand" : "HIGH",
+  "votes" : 1500
+}, {
+  "restaurantId" : "265fd73972e3827f",
+  "name" : "Coastal Catch",
+  "city" : "Mumbai",
+  "location" : "Colaba",
+  "cuisines" : [ "Seafood" ],
+  "rating" : 4.8,
+  "costForTwo" : 2200,
+  "budgetBand" : "HIGH",
+  "votes" : 760
+}, {
+  "restaurantId" : "2b5e2251f0e13088",
+  "name" : "Street Spice",
+  "city" : "Mumbai",
+  "location" : "Andheri",
+  "cuisines" : [ "Street Food" ],
+  "rating" : 3.9,
+  "costForTwo" : 400,
+  "budgetBand" : "LOW",
+  "votes" : 540
+}, {
+  "restaurantId" : "154061850dcdc994",
+  "name" : "Green Bowl",
+  "city" : "Chennai",
+  "location" : "Anna Nagar",
+  "cuisines" : [ "Healthy Food" ],
+  "rating" : 4.4,
+  "costForTwo" : 900,
+  "budgetBand" : "MEDIUM",
+  "votes" : 410
+}, {
+  "restaurantId" : "fce377858305c521",
+  "name" : "Chettinad House",
+  "city" : "Chennai",
+  "location" : "T Nagar",
+  "cuisines" : [ "South Indian" ],
+  "rating" : 4.5,
+  "costForTwo" : 700,
+  "budgetBand" : "LOW",
+  "votes" : 670
+}, {
+  "restaurantId" : "6aee266baa0ea445",
+  "name" : "Budget Bites",
+  "city" : "Bangalore",
+  "location" : "Marathahalli",
+  "cuisines" : [ "Fast Food" ],
+  "rating" : 3.5,
+  "costForTwo" : 300,
+  "budgetBand" : "LOW",
+  "votes" : 200
+}, {
+  "restaurantId" : "a58329a7c593ca11",
+  "name" : "Premium Grill",
+  "city" : "Bangalore",
+  "location" : "UB City",
+  "cuisines" : [ "Continental", "Steak" ],
+  "rating" : 4.9,
+  "costForTwo" : 3500,
+  "budgetBand" : "HIGH",
+  "votes" : 890
+}, {
+  "restaurantId" : "bf0c3fd1274fe085",
+  "name" : "Hyderabadi Spice",
+  "city" : "Hyderabad",
+  "location" : "Banjara Hills",
+  "cuisines" : [ "Biryani" ],
+  "rating" : 4.6,
+  "costForTwo" : 1100,
+  "budgetBand" : "MEDIUM",
+  "votes" : 1100
+}, {
+  "restaurantId" : "ad201a6b0a37d65d",
+  "name" : "Art of Food",
+  "city" : "Bangalore",
+  "location" : "JP Nagar",
+  "cuisines" : [ "Italian" ],
+  "rating" : 4.1,
+  "costForTwo" : 1300,
+  "budgetBand" : "MEDIUM",
+  "votes" : 330
+}, {
+  "restaurantId" : "9f851890119f2dae",
+  "name" : "Family Feast",
+  "city" : "Bangalore",
+  "location" : "BTM Layout",
+  "cuisines" : [ "North Indian", "Chinese" ],
+  "rating" : 4.3,
+  "costForTwo" : 950,
+  "budgetBand" : "MEDIUM",
+  "votes" : 520
+}, {
+  "restaurantId" : "6ebeecf1fa89f7c2",
+  "name" : "Ocean Blue",
+  "city" : "Mumbai",
+  "location" : "Juhu",
+  "cuisines" : [ "Seafood", "Continental" ],
+  "rating" : 4.6,
+  "costForTwo" : 2800,
+  "budgetBand" : "HIGH",
+  "votes" : 440
+}, {
+  "restaurantId" : "58e0234d1f3798bb",
+  "name" : "Tea Trails",
+  "city" : "Bangalore",
+  "location" : "Malleshwaram",
+  "cuisines" : [ "Cafe" ],
+  "rating" : 4.0,
+  "costForTwo" : 450,
+  "budgetBand" : "LOW",
+  "votes" : 180
+} ]

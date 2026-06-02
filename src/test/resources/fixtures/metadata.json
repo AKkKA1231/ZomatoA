@@ -1,0 +1,21 @@
+{
+  "ingestedAt" : "2026-05-17T19:40:49.969475800Z",
+  "rowCount" : 18,
+  "datasetId" : "ManikaSaini/zomato-restaurant-recommendation",
+  "sourceDescription" : "zomato-sample.csv",
+  "budgetThresholds" : {
+    "MEDIUM" : {
+      "minInclusive" : 762,
+      "maxInclusive" : 1344
+    },
+    "HIGH" : {
+      "minInclusive" : 1345,
+      "maxInclusive" : 2147483647
+    },
+    "LOW" : {
+      "minInclusive" : 0,
+      "maxInclusive" : 761
+    }
+  },
+  "rowsSkipped" : 2
+}
